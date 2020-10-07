@@ -4,9 +4,9 @@ from twilio.rest import Client
 from datetime import datetime, timedelta
 #! python3
 #Weather Data
-APPID = "7f9fa5da26147f0ded1e822f103d45a4"
+APPID = "Token is HERE"
 location = "97222"
-url =f'http://api.openweathermap.org/data/2.5/weather?zip={location},US&APPID=02c9ae9723e8db1a405bb322e7c371b8'
+url =f'http://api.openweathermap.org/data/2.5/weather?zip={location},US&APPID=Token is HERE'
 response = requests.get(url)
 response.raise_for_status()
 weatherData = json.loads(response.text)
@@ -48,11 +48,11 @@ for company in companys:
             stock_prices.append(final)
 
 #texting
-accountSID = "AC5a3a73b10989286bbf2553c6dd13be59"
-authToken  = "b5686e7c3c984c96d42d85f8f75b0bee"
+accountSID = "Token is HERE"
+authToken  = "Token is HERE"
 twilioCli = Client(accountSID, authToken)
-myTwilioNumber = '+18136995249'
-myCellPhone = '+19712125683'
+myTwilioNumber = '+PHONE NUMBER'
+myCellPhone = '+PHONE NUMBER'
 message = twilioCli.messages.create(body = f"""\n\nThe current temperature right now is {tempf} Fahrenheit, but it will feel like it is {feelsf} fahrenheit. These temperatures are not accurate but is close to what it actually is.
                                     \n Now, let's look at the open stock prices today.\n\nThe stock price for {companys[0]} is {stock_prices[0]}\n\nThe stock price for {companys[1]} is {stock_prices[1]}\n\nThe stock price for {companys[2]} is {stock_prices[2]}.\n\nIf you want to know different ETF, let me know but if you want more information on individual stocks, please let me know as I can give a lot of information. My minutes are limited on this account so I do not know how many minutes I have left. I might purchase a monthly plan as it is cheap.""",
                                      from_ = myTwilioNumber, to = myCellPhone)
