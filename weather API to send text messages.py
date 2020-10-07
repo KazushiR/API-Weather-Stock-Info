@@ -31,7 +31,7 @@ for company in companys:
     data = {
         "function": "TIME_SERIES_DAILY_ADJUSTED",
         "symbol": company,
-        "apikey": "GPSQ31YY1ELUONS3",
+        "apikey": "PHONE NUMBER",
         }
 
     stockresponse = requests.get(API_URL, data)
